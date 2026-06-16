@@ -1,0 +1,15 @@
+/* Efecto de elevación suave cuando pasas el mouse sobre las tarjetas de videojuegos */
+.transition-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+.transition-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+  border-color: #ffc107; /* Borde color advertencia de Bootstrap al hacer hover */
+}
+
+html {
+  scroll-behavior: smooth;
+}

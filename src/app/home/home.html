@@ -1,0 +1,27 @@
+<header class="bg-dark text-white text-center py-5" style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;">
+  <div class="container py-5">
+    <h1 class="display-4 fw-bold text-uppercase">El Universo Gaming</h1>
+    <p class="lead my-4">Análisis de lanzamientos, configuraciones técnicas y comunidad.</p>
+  </div>
+</header>
+
+<section id="juegos" class="container my-5">
+  <h2 class="text-center fw-bold mb-5 text-secondary">Lanzamientos Destacados</h2>
+  <div class="row g-4">
+    @for (juego of misJuegos; track juego.titulo) {
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img [src]="juego.imagen" class="card-img-top" [alt]="juego.titulo">
+          <div class="card-body">
+            <span class="badge bg-danger mb-2">{{ juego.genero }}</span>
+            <h5 class="card-title fw-bold">{{ juego.titulo }}</h5>
+            <p class="card-text text-muted">{{ juego.descripcion }}</p>
+          </div>
+          <div class="card-footer bg-transparent border-0 pb-3">
+            <button class="btn btn-outline-primary w-100" (click)="alertaAnalisis(juego.titulo)">Ver Análisis Completo</button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
