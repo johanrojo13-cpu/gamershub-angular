@@ -1,0 +1,42 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg border-0 bg-dark text-white rounded-4 overflow-hidden">
+        
+        <div class="card-header bg-warning text-dark text-center py-4">
+          <h2 class="fw-bold mb-0"><i class="bi bi-joystick"></i> Mini-Quest: Adivina el Número</h2>
+        </div>
+
+        <div class="card-body p-4 text-center">
+          <p class="fs-5 mb-4 text-light">{{ mensaje }}</p>
+
+          @if (!juegoTerminado) {
+            <div class="mb-3">
+              <input 
+                type="number" 
+                class="form-control form-control-lg bg-secondary text-white text-center border-0 fs-3 fw-bold mx-auto" 
+                style="max-width: 150px;"
+                [(ngModel)]="numeroUsuario"
+                (keyup.enter)="comprobarIntento()"
+                placeholder="?">
+            </div>
+
+            <button class="btn btn-warning btn-lg fw-bold px-5 shadow mb-3" (click)="comprobarIntento()">
+              <i class="bi bi-cpu-fill"></i> Probar Suerte
+            </button>
+
+            <p class="text-muted mb-0">Intentos actuales: <span class="badge bg-danger fs-6">{{ intentos }}</span></p>
+          } @else {
+            <div class="py-3">
+              <i class="bi bi-trophy-fill text-warning display-1 d-block mb-3 animate__animated animate__bounceIn"></i>
+              <button class="btn btn-success btn-lg fw-bold px-5 shadow" (click)="reiniciarJuego()">
+                <i class="bi bi-arrow-clockwise"></i> Jugar de Nuevo
+              </button>
+            </div>
+          }
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
