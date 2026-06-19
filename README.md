@@ -1,59 +1,52 @@
-# PokedexAngular
+# Catálogo de Videojuegos (Angular Frontend)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.1.
+Este proyecto es una aplicación web SPA (Single Page Application) desarrollada en **Angular** que permite a los usuarios explorar, buscar y filtrar un catálogo dinámico de videojuegos. La aplicación consume un servicio/API para renderizar la información en tiempo real, ofreciendo una interfaz fluida, responsiva y de alto rendimiento.
 
-## Development server
+---
 
-To start a local development server, run:
+## Arquitectura y Características Frontend
 
-```bash
-ng serve
-```
+La aplicación fue construida siguiendo las mejores prácticas del ecosistema moderno de Angular:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+* **Arquitectura Basada en Componentes:** Separación clara de responsabilidades (Componentes para la barra de búsqueda, tarjetas de videojuegos, vistas de detalle y contenedores de listas).
+* **Consumo de APIs (Servicios):** Implementación de servicios inyectables utilizando `HttpClient` para gestionar las peticiones asíncronas hacia el backend o API de videojuegos.
+* **Reactividad con RxJS:** Uso de observables para manejar los flujos de datos, eventos de búsqueda y el ciclo de vida de las peticiones de manera eficiente.
+* **Estilos Flexibles y Responsivos:** Uso de CSS moderno (Flexbox/Grid) o frameworks de diseño para garantizar que la interfaz se adapte perfectamente a dispositivos móviles, tablets y pantallas de escritorio.
+* **Módulo de Renderizado Eficiente:** Configurado sobre **Vite** como motor de desarrollo para asegurar recargas instantáneas y un bundle final optimizado para producción.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Tecnologías Utilizadas
 
-```bash
-ng generate component component-name
-```
+**Angular 17+**
+**TypeScript** (Tipado estricto para modelos de videojuegos)
+**RxJS** (Manejo de eventos asíncronos)
+**Vite / Angular CLI** (Entorno de desarrollo y construcción)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Instalación y Ejecución Local
 
-## Building
+### Prerrequisitos
+*Tener instalado **Node.js** (versión LTS recomendada).
+*Tener instalado el **Angular CLI** de forma global (`npm install -g @angular/cli`).
 
-To build the project run:
+### Pasos para iniciar el entorno de desarrollo
+1. Abre una terminal en la raíz del proyecto.
+2. Instala todas las dependencias de Node de tu archivo `package.json`:
+   ```bash
+   npm install
+3. Enciende el servidor de desarrollo local:
 
-```bash
-ng build
-```
+npm start o ng serve
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+4. Abre tu navegador e ingresa a la ruta predeterminada: http://localhost:4200
 
-## Running unit tests
+##Estructura del Código Fuente (src/app)
+**components: Componentes reutilizables de la interfaz (Cards, Navbar, Spinners).
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+**pages o /views: Vistas principales de la aplicación (Home, Detalle del Juego, Favoritos).
 
-```bash
-ng test
-```
+**services: Lógica de conexión HTTP para traer los datos de los videojuegos.
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**models o /interfaces: Plantillas TypeScript que definen la estructura exacta de un objeto "Videojuego" (id, nombre, imagen, plataformas, calificacion).
